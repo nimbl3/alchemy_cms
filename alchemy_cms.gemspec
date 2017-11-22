@@ -18,7 +18,7 @@ Gem::Specification.new do |gem|
   gem.files                 = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^spec/}) }
   gem.require_paths         = ['lib']
 
-  gem.add_runtime_dependency 'active_model_serializers',         ['~> 0.9.0']
+  gem.add_runtime_dependency 'active_model_serializers',         ['~> 0.10.6']
   gem.add_runtime_dependency 'acts_as_list',                     ['~> 0.3']
   gem.add_runtime_dependency 'acts-as-taggable-on',              ['~> 5.0']
   gem.add_runtime_dependency 'awesome_nested_set',               ['~> 3.1']
@@ -30,7 +30,7 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency 'handlebars_assets',                ['~> 0.23']
   gem.add_runtime_dependency 'jquery-rails',                     ['~> 4.0']
   gem.add_runtime_dependency 'jquery-ui-rails',                  ['~> 5.0.0']
-  gem.add_runtime_dependency 'kaminari',                         ['~> 0.15']
+  gem.add_runtime_dependency 'kaminari',                         ['~> 1.1.0']
   gem.add_runtime_dependency 'originator',                       ['~> 3.1']
   gem.add_runtime_dependency 'non-stupid-digest-assets',         ['~> 1.0.8']
   gem.add_runtime_dependency 'rails',                            ['~> 5.0', '< 6.0']
