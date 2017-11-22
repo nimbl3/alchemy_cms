@@ -148,13 +148,13 @@ Alchemy::Engine.routes.draw do
     get '/admin/pages/:id(.:format)' => 'pages#show', as: 'preview_page'
   end
 
-  get '/:locale' => 'pages#index',
+  get '/' => 'pages#index',
     constraints: {locale: Alchemy::RoutingConstraints::LOCALE_REGEXP},
     as: :show_language_root
 
   # The page show action has to be last route
   constraints(locale: Alchemy::RoutingConstraints::LOCALE_REGEXP) do
-    get '(/:locale)/*urlname(.:format)' => 'pages#show',
+    get '*urlname(.:format)' => 'pages#show',
       constraints: Alchemy::RoutingConstraints.new,
       as: :show_page
   end
