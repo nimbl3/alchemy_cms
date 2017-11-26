@@ -9,3 +9,17 @@
     ) %>
   </div>
 </div>
+<% if Alchemy::Tinymce.plugins.include? 'image'%>
+  <script>
+    $.getScript( "//static.filestackapi.com/v3/filestack.js", function( data, textStatus, jqxhr ) {
+      if (window.Alchemy === undefined) {
+        window.Alchemy = {};
+      }
+      window.Alchemy.FileStack = {
+        client: filestack.init("<%= ENV['FILESTACK_API_KEY']; %>", {
+          accept: "<%= ENV['FILESTACK_SUPPORTED_IMAGE_EXTENSIONS'] %>".split(',')
+        })
+      }
+    });
+  </script>
+<% end %>
