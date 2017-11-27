@@ -15,7 +15,7 @@ Alchemy.Initializer = ->
     Alchemy.Growler.fade()
 
   # Add observer for please wait overlay.
-  $('.please_wait, #main_navi a, .button_with_label form :submit, .locked_page a, .pagination a')
+  $('.please_wait, #main_navi a, .button_with_label form[target!="_blank"] :submit, .locked_page a, .pagination a')
     .not('*[data-alchemy-confirm], .locked_page button')
     .click ->
       unless Alchemy.isPageDirty()
