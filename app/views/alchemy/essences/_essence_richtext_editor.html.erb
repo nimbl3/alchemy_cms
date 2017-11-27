@@ -11,7 +11,7 @@
 </div>
 <% if Alchemy::Tinymce.plugins.include? 'image'%>
   <script>
-    $.getScript( "//static.filestackapi.com/v3/filestack.js", function( data, textStatus, jqxhr ) {
+    $.getScript( "//static.filestackapi.com/v3/filestack.js", function() {
       if (window.Alchemy === undefined) {
         window.Alchemy = {};
       }
