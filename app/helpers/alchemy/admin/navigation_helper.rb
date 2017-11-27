@@ -43,11 +43,12 @@ module Alchemy
 
       # CSS classes for main navigation entry.
       #
-      def main_navigation_css_classes(navigation)
+      def main_navigation_css_classes(module_name, navigation)
         [
           'main_navi_entry',
           admin_mainnavi_active?(navigation) ? 'active' : nil,
-          navigation.key?('sub_navigation') ? 'has_sub_navigation' : nil
+          navigation.key?('sub_navigation') ? 'has_sub_navigation' : nil,
+          module_name
         ].compact
       end
 
