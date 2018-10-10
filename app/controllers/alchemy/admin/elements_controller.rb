@@ -4,9 +4,11 @@ module Alchemy
   module Admin
     class ElementsController < Alchemy::Admin::BaseController
       before_action :load_element, only: [:update, :trash, :fold, :publish]
-      authorize_resource class: Alchemy::Element
+      authorize_resource class: Alchemy::Element, except: [:index]
 
       def index
+        authorize! :index, :alchemy_admin_elements
+
         @page = Page.find(params[:page_id])
         @cells = @page.cells
         if @cells.blank?
