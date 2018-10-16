@@ -95,7 +95,8 @@ module Alchemy
           :alchemy_admin_pages,
           :alchemy_admin_pictures,
           :alchemy_admin_tags,
-          :alchemy_admin_users
+          :alchemy_admin_users,
+          :alchemy_admin_elements
         ]
 
         # Controller actions
