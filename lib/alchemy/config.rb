@@ -27,6 +27,8 @@ module Alchemy
         @config ||= merge_configs!(alchemy_config, main_app_config, env_specific_config)
       end
 
+      def enable_subdomain_locale?; end
+
       private
 
       # Alchemy default configuration

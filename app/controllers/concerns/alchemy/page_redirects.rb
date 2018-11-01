@@ -32,6 +32,7 @@ module Alchemy
     end
 
     def locale_prefixed_url
+      return if Alchemy.enable_subdomain_locale
       return unless locale_prefix_missing?
 
       page_redirect_url(locale: Language.current.code)
