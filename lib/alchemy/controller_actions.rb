@@ -74,7 +74,9 @@ module Alchemy
     end
 
     # Override this method in host application in case that need to manage the language from host.
-    def load_host_language; end
+    def load_host_language
+      raise NotImplementedError if Alchemy.enable_subdomain_locale
+    end
 
     def load_alchemy_language_from_params
       if params[:locale].present?
