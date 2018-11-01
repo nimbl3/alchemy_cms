@@ -5,6 +5,13 @@
 module Alchemy
   class Config
     class << self
+      attr_accessor :enable_subdomain_locale
+
+      def initialize
+        @enable_subdomain_locale = false
+        super
+      end
+
       # Returns the configuration for given parameter name.
       #
       # @param name [String]
