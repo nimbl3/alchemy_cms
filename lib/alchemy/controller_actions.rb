@@ -65,11 +65,17 @@ module Alchemy
         @language = lang.is_a?(Language) ? lang : load_alchemy_language_from_id_or_code(lang)
       else
         # find the best language and remember it for later
-        @language = load_alchemy_language_from_params ||
+        @language = load_host_language ||
+                    load_alchemy_language_from_params ||
                     load_alchemy_language_from_session ||
                     Language.default
       end
       store_current_alchemy_language(@language)
+    end
+
+    # Override this method in host application in case that need to manage the language from host.
+    def load_host_language
+      raise NotImplementedError if Config.enable_subdomain_locale
     end
 
     def load_alchemy_language_from_params

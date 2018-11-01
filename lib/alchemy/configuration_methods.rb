@@ -37,5 +37,9 @@ module Alchemy
     def multi_site?
       Site.count > 1
     end
+
+    def page_subdomain(locale)
+      locale
+    end
   end
 end
