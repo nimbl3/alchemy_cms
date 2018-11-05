@@ -180,7 +180,7 @@ module Alchemy
         if Config.enable_subdomain_locale
           redirect_to show_page_url(
             urlname: @page.urlname,
-            subdomain: prefix_locale?(@page.language_code) ? page_subdomain(@page.language_code) : nil,
+            subdomain: prefix_locale?(@page.language_code) ? page_subdomain(@page.language_code) : default_page_subdomain,
             host: @page.site.host == "*" ? request.host : @page.site.host
           )
         else

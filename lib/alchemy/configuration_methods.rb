@@ -38,6 +38,11 @@ module Alchemy
       Site.count > 1
     end
 
+    # Override this method in host application in case that the host have default subdomain.
+    def default_page_subdomain
+      raise NotImplementedError if Config.enable_subdomain_locale
+    end
+
     def page_subdomain(locale)
       locale
     end
